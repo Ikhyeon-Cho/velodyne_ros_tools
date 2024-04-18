@@ -1,0 +1,12 @@
+<launch>
+  <arg name="frame_id" default="velodyne" />
+  <arg name="project_dir" default="" />
+  <arg name="bag_file" default="lidar.bag" />
+
+  <include file="$(find velodyne_ros_tools)/launch/include/_record_velodyne.launch">
+    <arg name="frame_id" value="$(arg frame_id)" />
+    <arg name="project_dir" value="$(arg project_dir)" />
+    <arg name="bag_file" value="$(arg bag_file)" />
+  </include>
+
+</launch>

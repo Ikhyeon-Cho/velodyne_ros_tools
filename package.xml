@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>velodyne_ros_tools</name>
+  <version>0.0.0</version>
+  <description>The velodyne_ros ROS package</description>
+  <maintainer email="tre0430@korea.ac.kr">Ikhyeon Cho</maintainer>
+  <license>.</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <depend>roscpp</depend>
+  <depend>rospy</depend>
+  <depend>tf2_ros</depend>
+  <depend>sensor_msgs</depend>
+  <depend>velodyne_pointcloud</depend>
+  <depend>rosbag_fancy</depend>
+  <export>
+  </export>
+</package>
