@@ -3,7 +3,7 @@
   <arg name="project_dir" default="" />
   <arg name="bag_file" default="lidar.bag" />
 
-  <node name="$(arg frame_id)_lidar_recorder" pkg="realsense_ros_tools" type="record_rs_camera.sh" output="screen"
+  <node name="$(arg frame_id)_lidar_recorder" pkg="velodyne_ros_tools" type="record_velodyne_lidar.sh" output="screen"
     args="$(arg frame_id)_$(arg bag_file) $(arg project_dir) $(arg frame_id)" />
 
 </launch>
