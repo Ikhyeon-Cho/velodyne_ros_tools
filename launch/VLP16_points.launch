@@ -1,7 +1,7 @@
 <launch>
   <arg name="frame_id" default="velodyne" />
   <arg name="device_ip" default="192.168.1.201" />
-  <arg name="port" default="2370" />
+  <arg name="port" default="2368" />
 
   <remap from="/velodyne_packets" to="/$(arg frame_id)/velodyne_packets" />
   <remap from="/velodyne_points" to="/$(arg frame_id)/points" />
@@ -10,6 +10,9 @@
     <arg name="frame_id" value="$(arg frame_id)" />
     <arg name="device_ip" value="$(arg device_ip)" />
     <arg name="port" value="$(arg port)" />
+
+    <!-- This makes the point time starting with positive zero -->
+    <arg name="timestamp_first_packet" default="true" />
   </include>
 
 </launch>

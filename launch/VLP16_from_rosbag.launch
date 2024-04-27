@@ -1,11 +1,13 @@
 <launch>
+  <arg name="frame_id" default="velodyne" />
   <arg name="project_dir" default="" />
+  <arg name="bag_file" default="velodyne_lidar.bag" />
+  
   <arg name="playback_speed" default="1" />
   <arg name="start_time" default="0.0" />
-  <arg name="frame_id" default="velodyne" />
 
   <!-- vlp16 packet to pointcloud -->
-  <include file="$(find velodyne_ros_tools)/launch/include/_VLP16_packet2cloud.launch">
+  <include file="$(find velodyne_ros_tools)/launch/include/VLP16_packet2cloud.launch.xml">
     <arg name="frame_id" value="$(arg frame_id)" />
     <arg name="min_range" value="0.4" />
     <arg name="max_range" value="130.0" />
@@ -15,6 +17,6 @@
   <!-- Play rosbag file -->
   <param name="/use_sim_time" value="true" />
   <node name="vlp_bag_player" pkg="rosbag" type="play" output="screen"
-    args="--clock -r $(arg playback_speed) -s $(arg start_time) $(env HOME)/Downloads/$(arg project_dir)/$(arg frame_id)_lidar.bag" />
+    args="--clock -r $(arg playback_speed) -s $(arg start_time) $(env HOME)/Downloads/$(arg project_dir)/$(arg bag_file)" />
 
 </launch>
