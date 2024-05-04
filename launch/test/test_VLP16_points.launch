@@ -1,0 +1,15 @@
+<launch>
+  <arg name="frame_id" default="velodyne" />
+  <arg name="device_ip" default="192.168.1.201" />
+  <arg name="port" default="2368" />
+
+  <include file="$(find velodyne_ros_tools)/launch/VLP16_points.launch">
+    <arg name="frame_id" value="$(arg frame_id)" />
+    <arg name="device_ip" value="$(arg device_ip)" />
+    <arg name="port" value="$(arg port)" />
+  </include>
+
+  <node pkg="rviz" type="rviz" name="rviz_$(arg frame_id)"
+    args="-d $(find velodyne_ros_tools)/launch/rviz/VLP16.rviz" />
+
+</launch>
